@@ -1,0 +1,18 @@
+service: aws-apigateway-lambda-s3-invoke
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  lambdaHashingVersion: 20240501
+
+  # you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+      Resource:
+        - "arn:aws:s3:::${file(config.json):S3_BUCKET_NAME}/*"
+
+functions:
+    handler: handler
