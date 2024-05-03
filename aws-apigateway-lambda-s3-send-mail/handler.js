@@ -5,7 +5,7 @@ const ses = new aws.SES({region: 'us-east-2'});
 
 
 exports.handler = async (event) => {
-    const bucketName = 'excel-files';
+    const bucketName = 'my-docx';
     const fileKey = event.fileName;
     // Simple GetObject
     let file = await s3.getObject({Bucket: bucketName, Key: fileKey}).promise();
