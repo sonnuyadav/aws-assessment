@@ -1,5 +1,5 @@
-service: aws-apigateway-lambda-s3-invoke
-frameworkVersion: '2'
+service: aws-apigateway-lambda-s3-send-mail
+frameworkVersion: '1'
 
 provider:
   name: aws
